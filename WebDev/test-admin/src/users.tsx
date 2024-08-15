@@ -1,5 +1,5 @@
 import { useMediaQuery, Theme } from "@mui/material";
-import { List, SimpleList, Datagrid, TextField, EmailField, EditButton } from "react-admin";
+import { List, SimpleList, Datagrid, TextField, EmailField, EditButton, required, TextInput, SimpleForm, Edit, Create } from "react-admin";
 
 export const UserList = () => {
     const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down("sm"));
@@ -27,3 +27,33 @@ export const UserList = () => {
         </List>
     );
 };
+
+export const UserEdit = () => (
+    <Edit>
+        <SimpleForm>
+            <TextInput source="id" InputProps={{ disabled: true }} />
+            <TextInput source="name" />
+            <TextInput source="username" />
+            <EmailField source="email" />
+            <TextInput source="address.street" />
+            <TextInput source="phone" />
+            <TextInput source="website" />
+            <TextInput source="company.name" />
+        </SimpleForm>
+    </Edit>
+);
+
+export const UserCreate = () => (
+    <Create>
+        <SimpleForm>
+            <TextInput source="id" />
+            <TextInput source="name" />
+            <TextInput source="username" />
+            <TextInput source="email" />
+            <TextInput source="address.street" />
+            <TextInput source="phone" />
+            <TextInput source="website" />
+            <TextInput source="company.name" />
+        </SimpleForm>
+    </Create>
+);

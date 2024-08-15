@@ -7,12 +7,12 @@ import {
 } from "react-admin";
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
-import { UserList } from "./users";
-import { PostList, PostEdit } from "./posts";
+import { UserList, UserEdit, UserCreate } from "./users";
+import { PostList, PostEdit, PostCreate } from "./posts";
 
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
-    <Resource name="users" list = {UserList} edit = {EditGuesser}/>
-    <Resource name="posts" list = {PostList} edit = {PostEdit}/>
+    <Resource name="users" list = {UserList} edit = {UserEdit} create = {UserCreate}/>
+    <Resource name="posts" list = {PostList} edit = {PostEdit} create = {PostCreate}/>
   </Admin>
 );
