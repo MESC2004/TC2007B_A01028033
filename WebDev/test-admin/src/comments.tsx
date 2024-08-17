@@ -31,7 +31,6 @@ export const CommentEdit = () => (
 export const CommentCreate = () => (
     <Create>
         <SimpleForm>
-            <TextInput source="id" InputProps={{ disabed: true }}/>
             <ReferenceInput source="postId" reference="posts"  />
             <TextInput source="name" />
             <TextInput source="email" />
