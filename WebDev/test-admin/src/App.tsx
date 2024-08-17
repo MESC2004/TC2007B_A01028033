@@ -20,6 +20,7 @@ import { PostList, PostEdit, PostCreate } from "./posts";
 import { CommentList, CommentEdit, CommentCreate} from "./comments";
 import { AlbumList, AlbumEdit, AlbumCreate } from "./albums"
 import { PhotoList, PhotoEdit, PhotoCreate } from "./photos"
+import { TodoList, TodoEdit, TodoCreate } from "./todos"
 
 export const App = () => (
   <Admin layout={Layout} authProvider={authProvider} dataProvider={dataProvider} dashboard={Dashboard}>
@@ -28,6 +29,7 @@ export const App = () => (
     <Resource name="comments" list = {CommentList} edit = {CommentEdit} create = {CommentCreate} icon={CommentIcon} />
     <Resource name="albums" list = {AlbumList} edit = {AlbumEdit} create = {AlbumCreate} icon={CollectionsIcon}/>
     <Resource name="photos" list = {PhotoList} edit = {PhotoEdit} create = {PhotoCreate} icon = {ImageIcon} />
+    <Resource name="todos" list= {TodoList} edit = {TodoEdit} create = {TodoCreate} />
 
   </Admin>
 );
