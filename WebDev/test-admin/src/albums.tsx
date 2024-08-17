@@ -8,7 +8,8 @@ import {
     SimpleForm,
     ReferenceInput,
     TextInput,
-    Create
+    Create,
+    required
 } from "react-admin";
 
 export const AlbumList = () => (

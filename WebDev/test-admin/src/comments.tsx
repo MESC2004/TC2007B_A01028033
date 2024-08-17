@@ -17,7 +17,7 @@ export const CommentList = () => (
 export const CommentEdit = () => (
     <Edit>
         <SimpleForm>
-            <TextInput source="id" InputProps={{ disabed: true }}/>
+            <TextInput source="id" InputProps={{ disabled: true }}/>
             <ReferenceInput source="postId" reference="posts"  />
             <TextInput source="name" />
             <TextInput source="email" />
@@ -31,6 +31,7 @@ export const CommentEdit = () => (
 export const CommentCreate = () => (
     <Create>
         <SimpleForm>
+            <TextInput source="id" />
             <ReferenceInput source="postId" reference="posts"  />
             <TextInput source="name" />
             <TextInput source="email" />
