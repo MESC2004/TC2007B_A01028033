@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "concurrently \"mongod\" \"cd backend && node index.js\" \"cd frontend && npm start\""
+  },
+  "dependencies": {
+    "concurrent": "^0.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
