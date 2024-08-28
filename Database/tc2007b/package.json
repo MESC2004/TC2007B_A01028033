@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "start": "concurrently \"mongod\" \"cd backend && node index.js\" \"cd frontend && npm start\""
+    "start": "concurrently --names \"MONGO,BACK,FRONT\" -c \"red,blue,green\" \"mongod\" \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && node index.js",
+    "start:frontend": "cd frontend && npm start"
   },
   "dependencies": {
     "concurrent": "^0.3.2"
