@@ -12,16 +12,26 @@ import {
 } from "react-admin";
 
 export const PostList = () => (
-    <List>
-        <Datagrid>
-            <TextField source="id" />
-            <ReferenceField source="userId" reference="users" />
-            <TextField source="title" />
-            <TextField source="body" />
-            <EditButton/>
-        </Datagrid>
-    </List>
-);
+    const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down("sm"));
+    return (
+      <List>
+          {isSmall ? (
+            <SimpleList>
+                primaryText={(record) => record.title}
+                secondaryText={(record) => record.body}
+            </>
+          ) : (
+          <Datagrid>
+              <TextField source="id" />
+              <ReferenceField source="userId" reference="users" />
+              <TextField source="title" />
+              <TextField source="body" />
+              <EditButton/>
+          </Datagrid>
+          )}
+      </List>
+        );
+    );
 
 export const PostEdit = () => (
     <Edit>
